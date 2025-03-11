@@ -1,0 +1,45 @@
+.card-heading {
+    color: #8f8f8f;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.card-sub-heading {
+    color: #8f8f8f !important;
+    font-size: 14px;
+    font-weight: 600;
+    width: 83px;
+
+}
+
+.card-sub-amount {
+    font-size: 16px !important;
+    font-weight: 800;
+}
+
+.card-amount {
+    font-size: 30px;
+    font-weight: 600;
+    color: #566a7f;
+}
+
+.h-2px {
+    height: 2px;
+    margin-bottom: 10px;
+}
+
+.avatar img {
+    position: relative;
+    width: 2.375rem;
+    height: 2.375rem;
+    cursor: pointer;
+}
+
+.card-table>:not(caption)>*>* {
+    padding: 2px;
+}
+
+.child-row .card-sub-heading {
+    padding-left: 20px; 
+}

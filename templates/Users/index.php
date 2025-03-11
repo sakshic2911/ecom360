@@ -1,0 +1,1 @@
+<h2>This is users index page</h2>
