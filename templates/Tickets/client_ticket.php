@@ -39,7 +39,7 @@ if($brand == 'yes')
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                     <?= $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                     <?= $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
@@ -48,7 +48,7 @@ if($brand == 'yes')
                              <div class="d-flex">
                                  <div class="flex-shrink-0 me-3">
                                      <div class="avatar avatar-online">
-                                     <?= $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                                     <?= $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
@@ -76,7 +76,7 @@ if($brand == 'yes')
                  </li>
                  <?php if($loginUser->user_type == 2): ?> 
                  <li class="nav-item">
-                     <a class="nav-link" href="<?= DROPSHIPPING ?>/client-archive-tickets"><i class="bx bx-detail me-1"></i>
+                     <a class="nav-link" href="<?= ECOM360 ?>/client-archive-tickets"><i class="bx bx-detail me-1"></i>
                          Archived Tickets</a>
                  </li>
                  <?php endif;?>
@@ -454,7 +454,7 @@ function commentAddFile() {
 
            $('#imgBasicModal').modal('hide');
            let commentData = JSON.parse(res);
-           var design = '<a class="text-decoration-none" href="<?= DROPSHIPPING;?>/img/tickets_file/'+commentData.file+'" target="_blank">'+commentData.file+'</a>&emsp;&emsp;&emsp;&emsp;';
+           var design = '<a class="text-decoration-none" href="<?= ECOM360;?>/img/tickets_file/'+commentData.file+'" target="_blank">'+commentData.file+'</a>&emsp;&emsp;&emsp;&emsp;';
            
            $('.newAtc').append(design);
            

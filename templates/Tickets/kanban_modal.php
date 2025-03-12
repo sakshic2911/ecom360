@@ -392,9 +392,9 @@
                                     <div class="avatar avatar-l me-2">
                                         <?php
                                         if ($loginUser->image != null)
-                                            echo $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "rounded-circle"]);
+                                            echo $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "rounded-circle"]);
                                         else
-                                            echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                                            echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                                         ?>
                                     </div>
@@ -446,9 +446,9 @@
                                         <div class="avatar avatar-l">
                                             <?php
                                                     if ($commVal->image != null)
-                                                        echo $this->Html->image("dropshipping/avatars/$commVal->image", ["class" => "rounded-circle"]);
+                                                        echo $this->Html->image("ECOM360/avatars/$commVal->image", ["class" => "rounded-circle"]);
                                                     else
-                                                        echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                                                        echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                                                     ?>
                                         </div>
@@ -572,7 +572,7 @@
                              <?php if (!empty($storeid)) { ?>
                                 <ul class="nav flex-lg-column fs--1 mt-3">
                                     <li class="nav-item me-2 me-lg-0">
-                                        <a class="nav-link fw-semi-bold" href="<?= DROPSHIPPING ?>/order-details/<?= $storeid[0]->id; ?>" target="_blank">
+                                        <a class="nav-link fw-semi-bold" href="<?= ECOM360 ?>/order-details/<?= $storeid[0]->id; ?>" target="_blank">
                                             <span class="mb-2 fs-0 fw-semi-bold text-decoration-underline">View Client Orders</span>
                                         </a>
                                     </li>
@@ -801,9 +801,9 @@ function commentAddShowTicket(ticketId, userId) {
                 <div class="avatar avatar-l">
                 <?php
                 if ($loginUser->image != null)
-                    echo $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "rounded-circle"]);
+                    echo $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "rounded-circle"]);
                 else
-                    echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                    echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                 ?>
                                     </div>

@@ -8,10 +8,10 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
-                        <a href="<?= DROPSHIPPING ?>/forgot-password" class="app-brand-link gap-2">
-                            <?= $this->Html->image("dropshipping/Ecom360logo.png", ["alt" => "", "height" => "55px"]) ?>
+                        <a href="<?= ECOM360 ?>/forgot-password" class="app-brand-link gap-2">
+                            <?= $this->Html->image("ECOM360/Ecom360logo.png", ["alt" => "", "height" => "55px"]) ?>
                         </a>
-                        <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">DropShipping Direct</span> -->
+                        <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">ECOM360 Direct</span> -->
                     </div>
                     <!-- /Logo -->
                     <h4 class="mb-2">Forgot Password? 🔒</h4>
@@ -25,7 +25,7 @@
                     <button type="submit" class="btn btn-primary d-grid w-100">Submit</button>
                     <?= $this->Form->end() ?>
                     <div class="text-center">
-                        <a href="<?= DROPSHIPPING ?>/" class="d-flex align-items-center justify-content-center">
+                        <a href="<?= ECOM360 ?>/" class="d-flex align-items-center justify-content-center">
                             <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                             Back to login
                         </a>

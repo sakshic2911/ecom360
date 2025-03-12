@@ -25,7 +25,7 @@
            <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                     <div class="avatar avatar-online">
-                    <?= $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                    <?= $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                     </div>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
@@ -34,7 +34,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
                                     <div class="avatar avatar-online">
-                                    <?= $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                                    <?= $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                                     </div>
                                 </div>
                                 <div class="flex-grow-1">
@@ -56,7 +56,7 @@
          <div class="col-md-12">
              <ul class="nav nav-pills flex-column flex-md-row mb-3">
                  <li class="nav-item">
-                     <a class="nav-link" href="<?= DROPSHIPPING ?>/tickets"><i class="bx bx-detail me-1"></i> Tickets</a>
+                     <a class="nav-link" href="<?= ECOM360 ?>/tickets"><i class="bx bx-detail me-1"></i> Tickets</a>
                  </li>
                  
                  <li class="nav-item">
@@ -173,7 +173,7 @@
 
                <div class="col-lg-2 col-sm-12">
                    <div class="mt-4">
-                       <a href="<?= DROPSHIPPING ?>/archive-tickets" class="btn btn-info">
+                       <a href="<?= ECOM360 ?>/archive-tickets" class="btn btn-info">
                             Clear
                         </a>
                    </div>
@@ -272,7 +272,7 @@ function kanban(id) {
 
 //           $('#imgBasicModal').modal('hide');
 //           let commentData = JSON.parse(res);
-//           var design = '<a class="text-decoration-none" href="<?= DROPSHIPPING;?>/img/tickets_file/'+commentData.file+'" target="_blank">'+commentData.file+'</a>';
+//           var design = '<a class="text-decoration-none" href="<?= ECOM360;?>/img/tickets_file/'+commentData.file+'" target="_blank">'+commentData.file+'</a>';
           
 //           $('.newAtc').append(design);
           

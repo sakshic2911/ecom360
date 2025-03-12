@@ -21,7 +21,7 @@
               <li class="nav-item navbar-dropdown dropdown-user dropdown">
                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                     <?= $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                     <?= $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
@@ -30,7 +30,7 @@
                              <div class="d-flex">
                                  <div class="flex-shrink-0 me-3">
                                      <div class="avatar avatar-online">
-                                     <?= $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                                     <?= $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
@@ -52,7 +52,7 @@
              <ul class="nav nav-pills flex-column flex-md-row mb-3">
                  <li class="nav-item">
                      <a class="nav-link "
-                     href="<?= DROPSHIPPING ?>/support-library"><i class="bx bx-detail me-1"></i> Categories</a>
+                     href="<?= ECOM360 ?>/support-library"><i class="bx bx-detail me-1"></i> Categories</a>
                  </li>
                  
                  <li class="nav-item ">

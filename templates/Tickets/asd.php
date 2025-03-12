@@ -312,7 +312,7 @@
 
                                     <div class=" flex-1 fs--2">
                                         <h6 class="mb-1"> <a class="text-decoration-none"
-                                                href="<?= DROPSHIPPING . '/img/tickets_file/' . $document->document ?>"
+                                                href="<?= ECOM360 . '/img/tickets_file/' . $document->document ?>"
                                                 data-gallery="attachment-title"
                                                 target="_blank"><?= $document->document ?></a>
                                         </h6>
@@ -338,7 +338,7 @@
                                     <div class="flex-1 fs--2">
                                         <h6 class="mb-1">
                                             <a class="text-decoration-none"
-                                                href="<?= DROPSHIPPING . '/img/tickets_file/' . $document->document ?>"
+                                                href="<?= ECOM360 . '/img/tickets_file/' . $document->document ?>"
                                                 target="_blank">
                                                 <?= $document->document ?>
                                             </a>
@@ -394,9 +394,9 @@
                                     <div class="avatar avatar-l me-2">
                                         <?php
                                         if ($loginUser->image != null)
-                                            echo $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "rounded-circle"]);
+                                            echo $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "rounded-circle"]);
                                         else
-                                            echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                                            echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                                         ?>
                                     </div>
@@ -444,9 +444,9 @@
                                         <div class="avatar avatar-l">
                                             <?php
                                                     if ($commVal->image != null)
-                                                        echo $this->Html->image("dropshipping/avatars/$commVal->image", ["class" => "rounded-circle"]);
+                                                        echo $this->Html->image("ECOM360/avatars/$commVal->image", ["class" => "rounded-circle"]);
                                                     else
-                                                        echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                                                        echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                                                     ?>
                                         </div>
@@ -588,9 +588,9 @@ function commentAddShow(ticketId, userId) {
                 <div class="avatar avatar-l">
                 <?php
                 if ($loginUser->image != null)
-                    echo $this->Html->image("dropshipping/avatars/$loginUser->image", ["class" => "rounded-circle"]);
+                    echo $this->Html->image("ECOM360/avatars/$loginUser->image", ["class" => "rounded-circle"]);
                 else
-                    echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                    echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                 ?>
                                     </div>

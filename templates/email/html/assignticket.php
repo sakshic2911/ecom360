@@ -5,7 +5,7 @@
 	                    <table width="100%" cellspacing="0" cellpadding="0" border="0" style="font-family:arial!important;font-size:12px!important;margin:auto;">
 	                      <tr>
 	                        <td align=center>
-	                          <img src="<?= DROPSHIPPING ?>/img/dropshipping/Ecom360logo.png" style="height: 67px;">
+	                          <img src="<?= ECOM360 ?>/img/ECOM360/Ecom360logo.png" style="height: 67px;">
 	                          <hr>
 	                          
 	                        </td>
@@ -20,7 +20,7 @@
 <p style="word-spacing: 3px;"><strong>Ticket title:</strong> <?= $title;?></p>
 <p style="word-spacing: 3px;"><strong>Description:</strong> <?= $description;?></p>
 							 
-                                <p style="word-spacing: 3px;">Please <a href="<?= DROPSHIPPING ?>/">log into</a> the portal to view the complete details and take appropriate action as necessary. Kindly ensure prompt response and resolution to maintain our high standards of customer service.
+                                <p style="word-spacing: 3px;">Please <a href="<?= ECOM360 ?>/">log into</a> the portal to view the complete details and take appropriate action as necessary. Kindly ensure prompt response and resolution to maintain our high standards of customer service.
 
 
                                 </p>

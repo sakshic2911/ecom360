@@ -5,7 +5,7 @@
 	                    <table width="100%" cellspacing="0" cellpadding="0" border="0" style="font-family:arial!important;font-size:12px!important;margin:auto;">
 	                      <tr>
 	                        <td align=center>
-	                          <img src="<?= DROPSHIPPING ?>/img/dropshipping/Ecom360logo.png" style="height: 67px;">
+	                          <img src="<?= ECOM360 ?>/img/ECOM360/Ecom360logo.png" style="height: 67px;">
 	                          <hr>
 	                          
 	                        </td>
@@ -18,7 +18,7 @@
                               <p style="word-spacing: 3px;">Ultimately, this is the only login you will need to buy inventory, see your store's sales, chat with support, and view your reconciled monthly statements.</p>
 							  <p style="word-spacing: 3px;"><strong>Username:</strong> <?= $email;?><br>
                                 <strong>Password:</strong> <?= $password;?></p>
-                                <p style="word-spacing: 3px;"><a href="<?= DROPSHIPPING ?>/">Click here</a> to log in.
+                                <p style="word-spacing: 3px;"><a href="<?= ECOM360 ?>/">Click here</a> to log in.
                                 </p>
 
 	                         

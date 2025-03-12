@@ -17,7 +17,7 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                     <?= $this->Html->image("dropshipping/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                     <?= $this->Html->image("ECOM360/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
@@ -26,7 +26,7 @@
                              <div class="d-flex">
                                  <div class="flex-shrink-0 me-3">
                                      <div class="avatar avatar-online">
-                                     <?= $this->Html->image("dropshipping/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                                     <?= $this->Html->image("ECOM360/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
@@ -48,7 +48,7 @@
          <div class="col-md-12">
              <ul class="nav nav-pills flex-column flex-md-row mb-3">
                  <li class="nav-item">
-                     <a class="nav-link" href="<?= DROPSHIPPING ?>/account-setting"><i class="bx bx-user me-1"></i>
+                     <a class="nav-link" href="<?= ECOM360 ?>/account-setting"><i class="bx bx-user me-1"></i>
                          Account</a>
                  </li>
                  <li class="nav-item">
@@ -57,7 +57,7 @@
                  </li>
                  <?php if($user->user_type == 1) :?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= DROPSHIPPING ?>/manage-notification"><i class="bx bx bxs-cog me-1"></i>
+                        <a class="nav-link" href="<?= ECOM360 ?>/manage-notification"><i class="bx bx bxs-cog me-1"></i>
                         Manage Notification</a>
                     </li>
                  <?php endif;?>

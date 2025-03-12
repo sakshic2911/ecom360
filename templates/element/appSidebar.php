@@ -2,9 +2,9 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="<?= DROPSHIPPING ?>/dashboard" class="app-brand-link">
+        <a href="<?= ECOM360 ?>/dashboard" class="app-brand-link">
             <span class="app-brand-logo demo">
-                <?= $this->Html->image("dropshipping/Ecom360logo.png", ["alt" => "", "height" => "50px"]) ?>
+                <?= $this->Html->image("ECOM360/Ecom360logo.png", ["alt" => "", "height" => "50px"]) ?>
             </span>
         </a>
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
@@ -53,7 +53,7 @@
             if(count($m->main[$m->folder]) == 1) {
                 $murl = $m->main[$m->folder][0]->url; ?>
                 <li class="menu-item <?= $folder == $m->folder  ? 'active' : 'inactive' ?>">
-                    <a href="<?= DROPSHIPPING ?>/<?= $murl;?>" class="menu-link">
+                    <a href="<?= ECOM360 ?>/<?= $murl;?>" class="menu-link">
                         <i class="menu-icon tf-icons bx <?= $m->icon;?>"></i>
                         <div> <?php echo $m->main[$m->folder][0]->menu_name;  ?></div>
                     </a>
@@ -77,7 +77,7 @@
         </li>
         <?php } ?>
         <li class="menu-item <?= $_SESSION['activeUrl'] == 'account'  ? 'active' : 'inactive' ?>">
-            <a href="<?= DROPSHIPPING ?>/account-setting" class="menu-link">
+            <a href="<?= ECOM360 ?>/account-setting" class="menu-link">
                 <i class="bx bx-cog me-2"></i>
                 <div>
                     Settings
@@ -85,7 +85,7 @@
             </a>
         </li>
         <li class="menu-item mt-1">
-            <a class="menu-link" href="<?= DROPSHIPPING ?>/logout">
+            <a class="menu-link" href="<?= ECOM360 ?>/logout">
                 <i class="bx bx-power-off me-2"></i>
                 <div class="align-middle">Log Out</div>
             </a>

@@ -143,6 +143,7 @@ class UsersTable extends Table
 
         $validator
             ->scalar('password')
+            ->requirePresence('password', 'create')
             ->allowEmptyString('password');
 
         $validator

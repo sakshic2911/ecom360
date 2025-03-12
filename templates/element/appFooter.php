@@ -7,8 +7,8 @@
 <script>
  document.write(new Date().getFullYear());
 </script>
-, Powered by <a href="<?= DROPSHIPPING ?>/" target="_blank">
-                 <img src="<?= DROPSHIPPING ?>/img/EcommTaxService.png" alt="" class="EcommLogo" /></a>
+, Powered by <a href="<?= ECOM360 ?>/" target="_blank">
+                 <img src="<?= ECOM360 ?>/img/EcommTaxService.png" alt="" class="EcommLogo" /></a>
 </div>
 <div>
 <a href="privacy-policy.php" class="footer-link me-4" target="_blank">Privacy & Policy</a>

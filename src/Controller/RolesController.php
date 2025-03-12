@@ -37,9 +37,9 @@ class RolesController extends AppController
         $permission = 3;
         foreach($menuList as $m)
         {
-            if($m->folder == 'Internal Staff')
+            if($m->folder == 'Roles')
             {
-                foreach($m->main['Internal Staff'] as $ml) {
+                foreach($m->main['Roles'] as $ml) {
 
                     if($ml->url=='roles' && $user->user_type==1)
                     { 
@@ -164,7 +164,7 @@ class RolesController extends AppController
                             ELSE role_permission_menus.permission
                         END) as permission,menu.folder
                         FROM menus as menu
-                        LEFT JOIN role_permission_menus as  ON menu.id = role_permission_menus.menu_id
+                        LEFT JOIN role_permission_menus  ON menu.id = role_permission_menus.menu_id
                             AND role_permission_menus.role_id = $id
                         WHERE menu.status = 'Active' and menu.user not in (4,5) ORDER BY sequence ASC,sub_sequence ASC";
              

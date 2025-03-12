@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
 <meta name="description" content="" />
-<?php $url = '/htdocs/dropshipping'; ?>
+<?php $url = '/htdocs/ECOM360'; ?>
 
 <!-- Favicon -->
-<link rel="apple-touch-icon" sizes="180x180" href="<?= $url ?>/img/dropshipping/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<?= $url ?>/img/dropshipping/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= $url ?>/img/dropshipping/favicon/favicon-16x16.png">
-    <link rel="manifest" href="<?= $url ?>/img/dropshipping/favicon/site.webmanifest">
-    <link rel="mask-icon" href="<?= $url ?>/img/dropshipping/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="apple-touch-icon" sizes="180x180" href="<?= $url ?>/img/ECOM360/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="<?= $url ?>/img/ECOM360/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= $url ?>/img/ECOM360/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= $url ?>/img/ECOM360/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?= $url ?>/img/ECOM360/favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
 
@@ -38,7 +38,7 @@
     <div class="content-wrapper">
         <div class="container-xxl container-p-y">
             <div class="d-flex justify-content-center mb-3">
-                <img src="http://44.230.62.131/ui-projects/dropshipping-direct/assets/img/Ecom360logo.png" alt="" height="75px">
+                <img src="http://44.230.62.131/ui-projects/ECOM360-direct/assets/img/Ecom360logo.png" alt="" height="75px">
             </div>
             <div class="card">
                 <div class="privacy-wrapper">

@@ -155,7 +155,7 @@ class AppController extends Controller
         }
 
 
-        $body = str_replace("#DROPSHIPPING", DROPSHIPPING, $body);
+        $body = str_replace("#ECOM360", ECOM360, $body);
 
         if(!empty($emailData['userId'])){
             $userId = $emailData['userId'];

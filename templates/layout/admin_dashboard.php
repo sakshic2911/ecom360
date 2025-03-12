@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <script>
-    let baseUrl = "<?= DROPSHIPPING ?>";
+    let baseUrl = "<?= ECOM360 ?>";
     </script>
     
     <meta name="viewport"
@@ -19,11 +19,11 @@
     ?>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= DROPSHIPPING ?>/img/dropshipping/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= DROPSHIPPING ?>/img/dropshipping/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= DROPSHIPPING ?>/img/dropshipping/favicon/favicon-16x16.png">
-    <link rel="manifest" href="<?= DROPSHIPPING ?>/img/dropshipping/favicon/site.webmanifest">
-    <link rel="mask-icon" href="<?= DROPSHIPPING ?>/img/dropshipping/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= ECOM360 ?>/img/ECOM360/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= ECOM360 ?>/img/ECOM360/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= ECOM360 ?>/img/ECOM360/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= ECOM360 ?>/img/ECOM360/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?= ECOM360 ?>/img/ECOM360/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 

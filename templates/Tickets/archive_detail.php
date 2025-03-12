@@ -239,9 +239,9 @@
                                         <div class="avatar avatar-l">
                                             <?php
                                                     if ($commVal->image != null)
-                                                        echo $this->Html->image("dropshipping/avatars/$commVal->image", ["class" => "rounded-circle"]);
+                                                        echo $this->Html->image("ECOM360/avatars/$commVal->image", ["class" => "rounded-circle"]);
                                                     else
-                                                        echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
+                                                        echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["class" => "rounded-circle"]);
 
                                                     ?>
                                         </div>

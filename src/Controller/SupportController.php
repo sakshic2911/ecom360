@@ -366,7 +366,7 @@ class SupportController extends AppController
     {
         if ($file->getClientFilename()) {
             $fileName = chr(rand(97, 122)) . rand(10000, 99999) . $file->getClientFilename();
-            $targetPath = WWW_ROOT . 'img' . DS . 'dropshipping' . DS . 'support' . DS . $fileName;
+            $targetPath = WWW_ROOT . 'img' . DS . 'ECOM360' . DS . 'support' . DS . $fileName;
             $maxVideoSize = 8 * 1024 * 1024; 
 
             if ($file->getSize() > $maxVideoSize) {

@@ -27,7 +27,7 @@ $form_type = ($meetingData[3]['is_checked'] == 1) ? $meetingData[3]['type'] : 0;
                     <div class="col-md-12">
                         <?php if($meetingData[2]['is_checked'] == 1 && $meetingData[2]['type'] == 1){
                             echo $meetingData[2]['content']; }else if($meetingData[2]['is_checked'] == 1 && $meetingData[2]['type'] == 2){ ?>
-                            <iframe src="img/dropshipping/support/<?php echo $meetingData[2]['content'] ?>" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="img/ECOM360/support/<?php echo $meetingData[2]['content'] ?>" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                            <?php  } ?>
                     </div>
                     <div class="col-md-12">

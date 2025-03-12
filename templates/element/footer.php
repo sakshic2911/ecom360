@@ -495,7 +495,7 @@ $(document).ready(function() {
 <script>
   function rightClick(event, id) {
     event.preventDefault();
-    window.open("<?= DROPSHIPPING ?>/tickets");
+    window.open("<?= ECOM360 ?>/tickets");
     // alert('id: ' + id);
   }
 </script>

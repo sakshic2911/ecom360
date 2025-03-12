@@ -8,10 +8,10 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
-                        <a href="<?= DROPSHIPPING ?>/forgot-password" class="app-brand-link gap-2">
-                            <?= $this->Html->image("dropshipping/Ecom360logo.png", ["alt" => "", "height" => "55px"]) ?>
+                        <a href="<?= ECOM360 ?>/forgot-password" class="app-brand-link gap-2">
+                            <?= $this->Html->image("ECOM360/Ecom360logo.png", ["alt" => "", "height" => "55px"]) ?>
                         </a>
-                        <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">DropShipping Direct</span> -->
+                        <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">ECOM360 Direct</span> -->
                     </div>
                     <!-- /Logo -->
                     <div class="text-center">
@@ -19,7 +19,9 @@
                         <?= $this->Flash->render('passChangeErr') ?>
                         <?= $this->Flash->render('passChange') ?>
                     </div>
-                    <?= $this->Form->create(null, ['method' => 'post', 'action' => 'Users/updatePassword']) ?>
+                    <!-- <?= $this->Form->create(null, ['method' => 'post', 'action' => 'Users/updatePassword']) ?> -->
+                    <?= $this->Form->create(null, ['method' => 'post', 'action' => 'updatePassword']) ?>
+
                         <div class="mb-3 col-md-12 form-password-toggle">
                              <div class="d-flex justify-content-between">
                                  <label class="form-label" for="password">Old Password</label>
@@ -68,7 +70,7 @@
 function oldPasswordMatch() {
     let oldPass = $('#oldPassword').val();
     const token = $('input[name="_csrfToken"]').attr('value');
-    let baseUrl = "<?= DROPSHIPPING ?>";
+    let baseUrl = "<?= ECOM360 ?>";
     $.ajax({
         url: `${baseUrl}/Users/oldPasswordMatch`,
         method: 'put',

@@ -447,7 +447,6 @@ function commissionCalculate(id) {
 }
 
 function editStaff(id,type) {
-    //  console.log(id);
     $.ajax({
         url: `${baseUrl}/Users/editInternalStaff`,
         method: "GET",

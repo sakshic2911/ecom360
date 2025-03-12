@@ -17,7 +17,7 @@
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                     <?= $this->Html->image("dropshipping/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                     <?= $this->Html->image("ECOM360/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
@@ -26,7 +26,7 @@
                              <div class="d-flex">
                                  <div class="flex-shrink-0 me-3">
                                      <div class="avatar avatar-online">
-                                     <?= $this->Html->image("dropshipping/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                                     <?= $this->Html->image("ECOM360/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
@@ -52,12 +52,12 @@
                      <a class="nav-link active" href="javascript:void(0);"><i class="bx bx-user me-1"></i> Account</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" href="<?= DROPSHIPPING ?>/change-password"><i class="bx bx bxs-key me-1"></i>
+                     <a class="nav-link" href="<?= ECOM360 ?>/change-password"><i class="bx bx bxs-key me-1"></i>
                          Change Password</a>
                  </li>
                 <?php if($user->user_type == 1) :?>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= DROPSHIPPING ?>/manage-notification"><i class="bx bx bxs-cog me-1"></i>
+                    <a class="nav-link" href="<?= ECOM360 ?>/manage-notification"><i class="bx bx bxs-cog me-1"></i>
                         Manage Notification</a>
                 </li>
                 <?php endif;?>
@@ -70,9 +70,9 @@
                          <!-- <img src="assets/img/avatars/1.png" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" /> -->
                          <?php
                             if ($img != NULL) {
-                                echo $this->Html->image("dropshipping/avatars/$img", ["alt" => "user-avatar", "height" => "100", "width" => "100", "class" => "d-block rounded", "id" => "uploadedAvatar"]);
+                                echo $this->Html->image("ECOM360/avatars/$img", ["alt" => "user-avatar", "height" => "100", "width" => "100", "class" => "d-block rounded", "id" => "uploadedAvatar"]);
                             } else {
-                                echo $this->Html->image("dropshipping/avatars/s49847avatar.png", ["alt" => "user-avatar", "height" => "100", "width" => "100", "class" => "d-block rounded", "id" => "uploadedAvatar"]);
+                                echo $this->Html->image("ECOM360/avatars/s49847avatar.png", ["alt" => "user-avatar", "height" => "100", "width" => "100", "class" => "d-block rounded", "id" => "uploadedAvatar"]);
                             }
                             ?>
                          <div class="button-wrapper">

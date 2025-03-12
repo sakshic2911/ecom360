@@ -12,10 +12,10 @@ $msg = $_SESSION['loginTempError'];
                  <div class="card-body">
                      <!-- Logo -->
                      <div class="app-brand justify-content-center">
-                         <a href="<?= DROPSHIPPING ?>/" class="app-brand-link gap-2">
-                             <?= $this->Html->image("dropshipping/Ecom360logo.png", ["alt" => "", "height" => "55px"]) ?>
+                         <a href="<?= ECOM360 ?>/" class="app-brand-link gap-2">
+                             <?= $this->Html->image("ECOM360/Ecom360logo.png", ["alt" => "", "height" => "55px"]) ?>
                          </a>
-                         <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">DropShipping Direct</span> -->
+                         <!-- <span class="app-brand-text demo menu-text fw-bolder ms-2">ECOM360 Direct</span> -->
                      </div>
                      <!-- /Logo -->
                      <h4 class="mb-2">Welcome to Ecom 360!</h4>
@@ -31,7 +31,7 @@ $msg = $_SESSION['loginTempError'];
                      <div class="mb-3 form-password-toggle">
                          <div class="d-flex justify-content-between">
                              <label class="form-label" for="password">Password</label>
-                             <a href="<?= DROPSHIPPING ?>/forgot-password">
+                             <a href="<?= ECOM360 ?>/forgot-password">
                                  <small>Forgot Password?</small>
                              </a>
                          </div>

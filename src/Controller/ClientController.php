@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Authentication\PasswordHasher\DefaultPasswordHasher;
 
 /**
  * Client Controller
@@ -419,7 +420,7 @@ class ClientController extends AppController
             $usersTbl->first_name = $first_name;
             $usersTbl->last_name = $last_name;
             $usersTbl->email = $email;
-            $usersTbl->password = $password;
+            $usersTbl->password = (new DefaultPasswordHasher())->hash($password);
             $usersTbl->contact_no = $this->request->getData('contact_no');
             $usersTbl->address = $this->request->getData('address');
             $usersTbl->organisation_name = $this->request->getData('organisation');

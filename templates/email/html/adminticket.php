@@ -5,7 +5,7 @@
 	                    <table width="100%" cellspacing="0" cellpadding="0" border="0" style="font-family:arial!important;font-size:12px!important;margin:auto;">
 	                      <tr>
 	                        <td align=center>
-	                          <img src="<?= DROPSHIPPING ?>/img/dropshipping/Ecom360logo.png" style="height: 67px;">
+	                          <img src="<?= ECOM360 ?>/img/ECOM360/Ecom360logo.png" style="height: 67px;">
 	                          <hr>
 	                          
 	                        </td>
@@ -17,7 +17,7 @@
 	                         
                               <p style="word-spacing: 3px;">A new response has been received from <strong><?= $name;?></strong>  on the ticket with title <strong><?= $title;?></strong>.</p>
 							 
-                                <p style="word-spacing: 3px;"><a href="<?= DROPSHIPPING ?>/tickets/">Click here</a> to access the portal for more information about the ticket.
+                                <p style="word-spacing: 3px;"><a href="<?= ECOM360 ?>/tickets/">Click here</a> to access the portal for more information about the ticket.
 
                                 </p>
                                

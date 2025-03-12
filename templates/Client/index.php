@@ -16,7 +16,7 @@
              <li class="nav-item navbar-dropdown dropdown-user dropdown">
                  <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                      <div class="avatar avatar-online">
-                         <?= $this->Html->image("dropshipping/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                         <?= $this->Html->image("ECOM360/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                      </div>
                  </a>
                  <ul class="dropdown-menu dropdown-menu-end">
@@ -25,7 +25,7 @@
                              <div class="d-flex">
                                  <div class="flex-shrink-0 me-3">
                                      <div class="avatar avatar-online">
-                                         <?= $this->Html->image("dropshipping/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
+                                         <?= $this->Html->image("ECOM360/avatars/$user->image", ["class" => "w-px-30 h-auto rounded-circle", "alt" => "user"]) ?>
                                      </div>
                                  </div>
                                  <div class="flex-grow-1">
@@ -68,7 +68,7 @@
                     </div>              
                     <div class="col-lg-2 col-sm-12 mb-2">
                         <div class="mt-4 text-end">
-                            <a href="<?= DROPSHIPPING ?>/accountholders" class="btn btn-info w-100">
+                            <a href="<?= ECOM360 ?>/accountholders" class="btn btn-info w-100">
                                 Clear
                             </a>
                         </div>
@@ -140,7 +140,7 @@
                                                  <a class="dropdown-item" href="javascript:void(0);" onclick="deleteStaff(<?= $val->id ?>,'Users/internalStaffDelete')"><i class="bx bx-trash me-1"></i>
                                                      Delete</a>
                                            
-                                                 <!-- <a class="dropdown-item" href="<?= DROPSHIPPING ?>/Client/getLogs/<?= base64_encode($val->id) ?>"><i class="bx bx-align-left me-1"></i>
+                                                 <!-- <a class="dropdown-item" href="<?= ECOM360 ?>/Client/getLogs/<?= base64_encode($val->id) ?>"><i class="bx bx-align-left me-1"></i>
                                                      See Activity log</a> -->
                                             
                                          </div>
