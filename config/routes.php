@@ -65,7 +65,8 @@ return static function (RouteBuilder $routes) {
         $builder->connect('/changeLoginStatus', ['controller' => 'Client', 'action' => 'changeLoginStatus']);
         $builder->connect('/client-archive-tickets', ['controller' => 'Tickets', 'action' => 'clientArchiveList']);
         $builder->connect('/add-internal-staff', ['controller' => 'Users', 'action' => 'addInternalStaff']);
-        $builder->connect('/edit-internal-staff', ['controller' => 'Users', 'action' => 'editInternalStaff']);
+        $builder->connect('/edit-internal-staff', ['controller' => 'InternalStaff', 'action' => 'editInternalStaff']);
+        $builder->connect('/edit_permission', ['controller' => 'InternalStaff', 'action' => 'updateIndividualPermission']); 
         $builder->connect('/edit_roles', ['controller' => 'Roles', 'action' => 'edit']);
 
 

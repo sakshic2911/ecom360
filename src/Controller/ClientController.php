@@ -39,15 +39,16 @@ class ClientController extends AppController
         {
             return $this->redirect(['controller' => 'Client', 'action' => 'dashboard']);
         }
-        else if(in_array($user->user_type,[0]))
+        else if(in_array($user->user_type,[0,1]))
         {
             $menu = $this->session->read('menu');
             $permission = 3; $lgPermission = 3;
             foreach($menu as $m)
             {
-                if($m->folder == 'Clients & Stores')
+                
+                if($m->folder == 'Clients')
                 {
-                    foreach($m->main['Clients & Stores'] as $ml) {
+                    foreach($m->main['Clients'] as $ml) {
     
                         if($ml->url=='client' && $user->user_type==1)
                         { 
@@ -122,7 +123,7 @@ class ClientController extends AppController
                 $client_status = 0;
     
             $deactivation_templates = $this->DeactivationTemplates->find('all')->toArray();
-
+        //    dd($permission);
             $this->set(compact('masterClients','user','fromDt','toDt','deactivation_templates','permission','affiliateClients','plan','overrideClients'));
         }
         else
@@ -232,25 +233,11 @@ class ClientController extends AppController
            
             if ($this->request->getData('referrer_affiliate') != 0) {
                 $refAffiliateId = (int) $this->request->getData('referrer_affiliate');
-
-                //update store table if record exist
-                $store = $this->storeTbl->query();
-                $store->update()
-                        ->set(['referring_affiliate' => $refAffiliateId])
-                        ->where(['clients' => $this->request->getData('editId')]);
-                $store->execute();
-
-
+                
                 if ($this->userTbl->get($this->request->getData('referrer_affiliate'))->referrer_affiliate != 0)
                 {
                     $parentAffiliate = $this->userTbl->get($this->request->getData('referrer_affiliate'))->referrer_affiliate;
 
-                    //update store table if record exist
-                    $store = $this->storeTbl->query();
-                    $store->update()
-                            ->set(['parent_affiliate' => $parentAffiliate])
-                            ->where(['clients' => $this->request->getData('editId')]);
-                    $store->execute();
                 }
                 else
                     $parentAffiliate = 0;
@@ -629,7 +616,6 @@ class ClientController extends AppController
 
         }
         $this->session->write('menu',$list);
-        $this->session->write('brand_data', 'no');
         unset($_SESSION['adminLoginClientId']);
         return $this->redirect('/client');
     }

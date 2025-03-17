@@ -26,6 +26,8 @@ class AppController extends Controller
         $this->loadComponent('Authorization.Authorization');
         $this->Authorization->skipAuthorization();
         $this->userTable = $this->getTableLocator()->get('Users');
+        $this->loadModel('ActivityLogs');
+
         /*
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html

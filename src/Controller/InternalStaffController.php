@@ -2,6 +2,8 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Cake\Datasource\ConnectionManager;
+
 
 /**
  * InternalStaff Controller
@@ -32,7 +34,7 @@ class InternalStaffController extends AppController
         // $this->ActivityLogs = $this->getTableLocator()->get('ActivityLogs');
         // $this->DeactivationTemplates = $this->getTableLocator()->get('DeactivationTemplates');
         // $this->StaffAccountManagers = $this->getTableLocator()->get('StaffAccountManagers');
-        // $this->UserPermissions = $this->getTableLocator()->get('UserPermissions');
+        $this->UserPermissions = $this->getTableLocator()->get('UserPermissions');
         // $this->storeNameType = $this->getTableLocator()->get('StoreTypeAssign');
 
     }
@@ -161,7 +163,7 @@ class InternalStaffController extends AppController
             $this->viewBuilder()->setLayout('ajax');
             $id = $this->request->getQuery('id');
 
-            $staffData = $this->Users->find()
+            $staffData = $this->userTbl->find()
                 ->select(['Users.id', 'store_permission', 'first_name', 'last_name', 'email', 'contact_no', 'image', 'role_id','parent_role','issue_type'=>'UsersIssues.issue_type','manager_bio','store_capacity','embed_code','calender_id','amazon','walmart'])
                 ->join([
                     'UsersIssues' =>[
@@ -184,15 +186,15 @@ class InternalStaffController extends AppController
                     ->where(['status' => 1, 'delete_role' => 0])
                     ->toArray();
 
-                $senior_manager = $this->Users->find()
+                $senior_manager = $this->userTbl->find()
                     ->select(['id', 'name' => 'concat(first_name," ",last_name)'])
                     ->where(['delete_user' => 0,'role_id' => 20])
                     ->toArray();
-                $account_manager = $this->Users->find()
+                $account_manager = $this->userTbl->find()
                     ->select(['id', 'name' => 'concat(first_name," ",last_name)'])
                     ->where(['delete_user' => 0,'role_id IN' => [15,20]])
                     ->toArray();   
-                $temp_account_manager = $this->Users->find()
+                $temp_account_manager = $this->userTbl->find()
                     ->select(['id', 'name' => 'concat(first_name," ",last_name)'])
                     ->where(['delete_user' => 0,'role_id IN' => [15,20],'id !=' => $staffData[0]['parent_role']])
                     ->toArray();
@@ -200,11 +202,11 @@ class InternalStaffController extends AppController
         } elseif ($this->request->is(['post', 'put', 'patch'])) {
 
             $staff_id = $this->request->getData('staff_id');
-            $emailCount = $this->Users->find()
+            $emailCount = $this->userTbl->find()
             ->where(['id !=' => $staff_id, 'email' => $this->request->getData('email'),'delete_user'=>0])
             ->toArray();
              //get the staff account information
-             $staff = $this->Users->find('all')
+             $staff = $this->userTbl->find('all')
              ->select(['first_name','role_id'])
              ->where(['id' => $staff_id])
              ->first();
@@ -281,7 +283,7 @@ class InternalStaffController extends AppController
                         }
                     }
                 }
-            $staffUpdate = $this->Users->query()
+            $staffUpdate = $this->userTbl->query()
                 ->update()
                 ->set($data)
             ->where(['id' => $staff_id]);
@@ -356,5 +358,94 @@ class InternalStaffController extends AppController
                 return $this->redirect(['controller' => 'Users', 'action' => 'internalStaff']);
                 }
             } 
+    }
+
+    public function individualPermission(){
+        $id = $this->request->getData('id');
+        $connection = ConnectionManager::get('default');
+        
+            $query = "SELECT menus.menu_name,menus.id,menus.parent,
+            (CASE
+                WHEN user_permissions.permission IS NULL THEN 3
+                ELSE user_permissions.permission
+            END) as permission,menus.folder
+            FROM menus
+            LEFT JOIN user_permissions ON menus.id = user_permissions.menu_id
+                AND user_permissions.user_id = $id
+            WHERE menus.status = 'Active' and menus.user not in (4,5) ORDER BY sequence ASC,sub_sequence ASC";
+ 
+        $menuData = $connection->execute($query)->fetchAll('assoc');
+        
+        $organizedMenu = [];
+
+        foreach ($menuData as $menu) {
+            $folder = $menu['folder'];
+            $parent = $menu['parent'];
+
+            if ($parent) {
+                // If the menu has a parent, associate it under the parent's folder
+                if (!isset($organizedMenu[$parent])) {
+                    $organizedMenu[$parent] = [ 
+                        'folder' => $parent,
+                        'items' => [],
+                    ];
+                }
+                $organizedMenu[$parent]['items'][] = $menu; // Add the menu to the parent's items
+            } else {
+                // If no parent, organize it directly under its folder
+                if (!isset($organizedMenu[$folder])) {
+                    $organizedMenu[$folder] = [
+                        'folder' => $folder,
+                        'items' => [],
+                    ];
+                }
+                $organizedMenu[$folder]['items'][] = $menu;
+            }
+        }
+
+        $this->set(compact('organizedMenu','id'));  
+    }
+
+    public function updateIndividualPermission()
+    {
+        $data = $this->request->getData();
+        $userId = $data['userId'];
+        unset($data['userId']); 
+
+        // Fetch existing permissions for the user
+        $existingPermissions = $this->UserPermissions->find()
+        ->select(['id','menu_id', 'permission'])
+        ->where(['user_id' => $userId])
+        ->indexBy('menu_id')
+        ->toArray();
+
+        foreach ($data as $key => $val) {
+            $menuId = (int) strtok($key, '/');
+
+            if ($menuId === 0) {
+                continue;
+            }
+            if (isset($existingPermissions[$menuId])) {
+                $existingPermission = $existingPermissions[$menuId];
+                if ($existingPermission->permission != $val) {
+                    // Update existing permission if it has changed
+                    $existingPermission->permission = $val;
+                    $existingPermission->type = 'user';
+                    $this->UserPermissions->save($existingPermission);
+                }
+            } else if($val != 3){
+                // Create a new permission
+                $newPermission = $this->UserPermissions->newEntity([
+                    'user_id' => $userId,
+                    'menu_id' => $menuId,
+                    'permission' => $val,
+                    'type' => 'user',
+                ]);
+                $this->UserPermissions->save($newPermission);
+            }
+        }
+        $this->Flash->success('Permission updated successfully.', ['key' => 'staffUpdate']);
+
+        return $this->redirect(['controller' => 'InternalStaff', 'action' => 'internalStaff']);
     }
 }

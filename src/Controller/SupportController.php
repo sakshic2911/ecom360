@@ -52,7 +52,7 @@ class SupportController extends AppController
             }
         }
         $categoryData = $this->supportcategoryTbl->find()->where(['is_deleted' => 0])->order(['ranking'=>'ASC'])->toArray();    
-        $Rank = $this->supportcategoryTbl->find()->select(['last_rank' => 'MAX(ranking)'])->first();
+        $Rank = $this->supportcategoryTbl->find()->select(['last_rank' => 'MAX(ranking)'])->where(['is_deleted'=>0])->first();
         $lastRank = $Rank->last_rank;
         $this->set(compact('categoryData','loginUser','permission','lastRank'));
     }
@@ -147,7 +147,7 @@ class SupportController extends AppController
                 ->where(['id' => $this->request->getData('editId')]);
 
             if ($categoryData->execute()) {
-                $this->Flash->success('Category data is update successfully.', ['key' => 'success']);
+                $this->Flash->success('Category data is updated successfully.', ['key' => 'success']);
                 return $this->redirect(['action' => 'supportCategories']);
             }
         }
@@ -561,7 +561,7 @@ class SupportController extends AppController
         {
             $id = $this->request->getQuery('id');
 
-            $resource = $this->supportresourcesTbl->find('all')
+            $resource = $this->supportresourceTbl->find('all')
                        ->select(['embed_code'])
                        ->where(['is_deleted' => 0, 'id' => $id])
                        ->first();

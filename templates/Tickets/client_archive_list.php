@@ -60,7 +60,7 @@
                  </li>
                  
                  <li class="nav-item">
-                     <a class="nav-link active" href="javascript:void(0);" style="background-color:#73a154 !important;"><i class="bx bx-detail me-1"></i>
+                     <a class="nav-link active" href="javascript:void(0);" style="background-color:#186cff !important;"><i class="bx bx-detail me-1"></i>
                          Archived Tickets</a>
                  </li>
                 

@@ -1,7 +1,7 @@
 <?= $this->Html->css("assets/css/kanban") ?>
 <style>
     .clr-theme {
-    color: #73a154;
+    color: #186cff;
 }
 .text-yellow{
     color:#979714;

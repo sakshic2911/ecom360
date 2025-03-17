@@ -41,7 +41,7 @@ class TicketsController extends AppController
         // $this->productTbl     = $this->getTableLocator()->get('Product');
         // $this->internalTicketProductsTbl = $this->getTableLocator()->get('InternalTicketProducts');
         // $this->staffManagerTbl = $this->getTableLocator()->get('StaffAccountManagers');
-        // $this->ticketActivitiesTbl = $this->getTableLocator()->get('TicketsActivities');
+        $this->ticketActivitiesTbl = $this->getTableLocator()->get('TicketsActivities');
         // $this->chatTbl = $this->getTableLocator()->get('OnboardingChat');
         // $this->internalTicketWatchersTbl = $this->getTableLocator()->get('InternalTicketWatchers');
         $this->TicketWatchersTbl = $this->getTableLocator()->get('TicketWatchers');

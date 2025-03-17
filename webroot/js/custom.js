@@ -448,7 +448,7 @@ function commissionCalculate(id) {
 
 function editStaff(id,type) {
     $.ajax({
-        url: `${baseUrl}/Users/editInternalStaff`,
+        url: `${baseUrl}/InternalStaff/editInternalStaff`,
         method: "GET",
         data: {
             id: id
@@ -3882,7 +3882,7 @@ function filterStaff(){
 
 function editUserPermission(id){
     $.ajax({
-        url: `${baseUrl}/Users/individualPermission`,
+        url: `${baseUrl}/InternalStaff/individualPermission`,
         method : 'POST',
         data: {
             id: id

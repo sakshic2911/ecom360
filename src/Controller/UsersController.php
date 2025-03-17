@@ -276,12 +276,10 @@ class UsersController extends AppController
             } else if ($user->user_type == 1) { 
                 $this->session->write('userType', 'staff');
                 $this->session->write('master',$user);
-                $this->session->write('brand_data', 'no');
             }
             else{ 
                 $this->session->write('userType', 'admin');
                 $this->session->write('master',$user);
-                $this->session->write('brand_data', 'no');
             }
 
 
@@ -1049,6 +1047,102 @@ class UsersController extends AppController
                 $this->UserPermissions->save($userPermission);
             }
         }
+    }
+
+    public function loginStaff($id)
+    {
+        $this->Authorization->skipAuthorization();
+        $loginUser = $this->session->read('user');
+        if(!$loginUser)
+        {
+            return $this->redirect(['controller' => 'Users', 'action' => 'logout']);
+        }
+        if($loginUser->user_type == 2)
+        {
+            return $this->redirect(['controller' => 'Client', 'action' => 'index']);
+        }
+        if($loginUser->user_type == 1)
+        {
+            $menu = $this->session->read('menu');
+            $lgPermission = 0;
+            foreach($menu as $m) {
+                if($m->folder == 'Extra')
+                {
+                    foreach($m->main['Extra'] as $ml) {
+
+                        if($ml->menu_name=='Login as Staff' && $ml->permission != 3)
+                        { 
+                            $lgPermission = 1;
+                        }
+                   }
+                }            
+            }
+            if($lgPermission === 0){
+                return $this->redirect('/'.$menu[0]->main[$menu[0]->folder][0]->url);
+            }
+            
+        }
+        
+        $clientData = $this->userTbl->get($id);
+        $this->session->write('user',$clientData);
+        
+        $condition = ['UserPermissions.permission !='=>3,'Menus.status'=>'Active','UserPermissions.user_id'=>$clientData->id];
+        
+        
+        $mlist = $this->menu->find()->select(['folder','sequence','icon'])->join([
+            'UserPermissions' => [
+                'table' => 'user_permissions',
+                'type' => 'INNER',
+                'conditions' => 'UserPermissions.menu_id = Menus.id',
+                ]
+                ])->where($condition)->order(['sequence'=>'ASC'])->group('sequence')->toArray();
+        $list = [];
+        
+        foreach($mlist as $ml)
+        {
+            $conditionMenu = ['UserPermissions.permission !='=>3,'Menus.status'=>'Active','sequence'=>$ml->sequence,'UserPermissions.user_id'=>$clientData->id];
+            
+            $menu = $this->menu->find()->select(['menu_name','url','icon','user','permission'=>'UserPermissions.permission'])->join([
+                'UserPermissions' => [
+                    'table' => 'user_permissions',
+                    'type' => 'INNER',
+                    'conditions' => 'UserPermissions.menu_id = Menus.id',
+                    ]
+                    ])->where($conditionMenu)->order(['sub_sequence'=>'ASC'])->group('menu_name')->toArray();
+                    
+            $m1 = [];
+            $m1['icon'] = $ml->icon;
+            $m1['folder'] = $ml->folder;
+            $check = 0;       
+            // if($ml->folder == 'Clients')
+            // {
+            //     foreach($menu as $m)
+            //     {
+            //         if($m->menu_name == 'Onboarding Clients')
+            //         {
+            //             $check = 1; break;
+            //         }    
+                    
+            //     }
+            // }
+            foreach($menu as $m)
+            {
+                $m2 = [];
+                $m2['menu_name'] = $m->menu_name;
+                $m2['url'] = $m->url;
+                $m2['permission'] = $m->permission;
+                $m1['main'][$ml->folder][] = (object)$m2;
+
+            }
+            $list[] = (object)$m1;
+        // $this->session->write('menu1',$list);
+
+        }
+
+        $this->session->write('menu',$list);
+        $this->session->write('userType', 'admin');
+
+        return $this->redirect('/'.$list[0]->main[$list[0]->folder][0]->url);
     }
 
 }
